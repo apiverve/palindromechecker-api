@@ -1,0 +1,99 @@
+openapi: 3.0.4
+info:
+  title: Palindrome Checker
+  description: Palindrome Checker is a tool for checking if text is a palindrome. It supports options to ignore case, spaces, and punctuation, and finds the longest palindromic substring.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/palindromechecker:
+    get:
+      summary: Check Palindrome
+      description: Palindrome Checker is a tool for checking if text is a palindrome. It supports options to ignore case, spaces, and punctuation, and finds the longest palindromic substring.
+      operationId: palindromechecker
+      parameters:
+      - name: text
+        in: query
+        schema:
+          type: string
+        required: true
+        description: The text to check for palindrome
+        example: A man a plan a canal Panama
+      - name: ignorecase
+        default: true
+        in: query
+        schema:
+          type: boolean
+        required: false
+        description: 'Ignore case when checking (default: true)'
+        example: true
+      - name: ignorespaces
+        default: true
+        in: query
+        schema:
+          type: boolean
+        required: false
+        description: 'Ignore spaces when checking (default: true)'
+        example: true
+      - name: ignorepunctuation
+        default: true
+        in: query
+        schema:
+          type: boolean
+        required: false
+        description: 'Ignore punctuation when checking (default: true)'
+        example: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  text: A man a plan a canal Panama
+                  is_palindrome: true
+                  cleaned_text: amanaplanacanalpanama
+                  reversed_text: amanaplanacanalpanama
+                  length: 21
+                  options:
+                    ignore_case: true
+                    ignore_spaces: true
+                    ignore_punctuation: true
+                  longest_palindrome_substring: amanaplanacanalpanama
+                  longest_palindrome_length: 21
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
