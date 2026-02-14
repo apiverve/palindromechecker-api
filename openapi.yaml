@@ -1,56 +1,56 @@
 openapi: 3.0.4
 info:
   title: Palindrome Checker
-  description: Palindrome Checker is a tool for checking if text is a palindrome. It supports options to ignore case, spaces, and punctuation, and finds the longest palindromic substring.
+  description: >-
+    Palindrome Checker is a tool for checking if text is a palindrome. It
+    supports options to ignore case, spaces, and punctuation, and finds the
+    longest palindromic substring.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/palindromechecker:
     get:
       summary: Check Palindrome
-      description: Palindrome Checker is a tool for checking if text is a palindrome. It supports options to ignore case, spaces, and punctuation, and finds the longest palindromic substring.
+      description: Check if text is a palindrome with customizable options
       operationId: palindromechecker
       parameters:
-      - name: text
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The text to check for palindrome
-        example: A man a plan a canal Panama
-      - name: ignorecase
-        default: true
-        in: query
-        schema:
-          type: boolean
-        required: false
-        description: 'Ignore case when checking (default: true)'
-        example: true
-      - name: ignorespaces
-        default: true
-        in: query
-        schema:
-          type: boolean
-        required: false
-        description: 'Ignore spaces when checking (default: true)'
-        example: true
-      - name: ignorepunctuation
-        default: true
-        in: query
-        schema:
-          type: boolean
-        required: false
-        description: 'Ignore punctuation when checking (default: true)'
-        example: true
+        - name: text
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The text to check for palindrome
+          example: A man a plan a canal Panama
+        - name: ignorecase
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: 'Ignore case when checking (default: true)'
+          example: true
+        - name: ignorespaces
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: 'Ignore spaces when checking (default: true)'
+          example: true
+        - name: ignorepunctuation
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: 'Ignore punctuation when checking (default: true)'
+          example: true
       responses:
         '200':
           description: Successful Response
@@ -66,11 +66,11 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   text: A man a plan a canal Panama
                   is_palindrome: true
@@ -88,7 +88,7 @@ paths:
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -96,4 +96,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
