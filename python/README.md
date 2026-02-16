@@ -44,7 +44,12 @@ from apiverve_palindromechecker.apiClient import PalindromecheckerAPIClient
 # Initialize the client with your APIVerve API key
 api = PalindromecheckerAPIClient("[YOUR_API_KEY]")
 
-query = { "text": "A man a plan a canal Panama", "ignorecase": true, "ignorespaces": true, "ignorepunctuation": true }
+query = {
+    "text": "A man a plan a canal Panama",
+    "ignorecase": true,
+    "ignorespaces": true,
+    "ignorepunctuation": true
+}
 
 try:
     # Make the API call
@@ -82,7 +87,12 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "text": "A man a plan a canal Panama", "ignorecase": true, "ignorespaces": true, "ignorepunctuation": true }
+query = {
+    "text": "A man a plan a canal Panama",
+    "ignorecase": true,
+    "ignorespaces": true,
+    "ignorepunctuation": true
+}
 ```
 
 ###### Simple Request
@@ -131,7 +141,12 @@ from apiverve_palindromechecker.apiClient import PalindromecheckerAPIClient, Pal
 
 api = PalindromecheckerAPIClient("[YOUR_API_KEY]")
 
-query = { "text": "A man a plan a canal Panama", "ignorecase": true, "ignorespaces": true, "ignorepunctuation": true }
+query = {
+    "text": "A man a plan a canal Panama",
+    "ignorecase": true,
+    "ignorespaces": true,
+    "ignorepunctuation": true
+}
 
 try:
     result = api.execute(query)
@@ -152,7 +167,12 @@ from apiverve_palindromechecker.apiClient import PalindromecheckerAPIClient, Pal
 
 api = PalindromecheckerAPIClient("[YOUR_API_KEY]")
 
-query = { "text": "A man a plan a canal Panama", "ignorecase": true, "ignorespaces": true, "ignorepunctuation": true }
+query = {
+    "text": "A man a plan a canal Panama",
+    "ignorecase": true,
+    "ignorespaces": true,
+    "ignorepunctuation": true
+}
 
 try:
     result = api.execute(query)
@@ -186,7 +206,12 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_palindromechecker.apiClient import PalindromecheckerAPIClient, PalindromecheckerAPIClientError
 
-query = { "text": "A man a plan a canal Panama", "ignorecase": true, "ignorespaces": true, "ignorepunctuation": true }
+query = {
+    "text": "A man a plan a canal Panama",
+    "ignorecase": true,
+    "ignorespaces": true,
+    "ignorepunctuation": true
+}
 
 # Using context manager ensures proper cleanup
 with PalindromecheckerAPIClient("[YOUR_API_KEY]") as api:
@@ -212,7 +237,12 @@ from apiverve_palindromechecker.apiClient import PalindromecheckerAPIClient
 # Enable debug mode
 api = PalindromecheckerAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "text": "A man a plan a canal Panama", "ignorecase": true, "ignorespaces": true, "ignorepunctuation": true }
+query = {
+    "text": "A man a plan a canal Panama",
+    "ignorecase": true,
+    "ignorespaces": true,
+    "ignorepunctuation": true
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -227,8 +257,14 @@ from apiverve_palindromechecker.apiClient import PalindromecheckerAPIClient
 
 api = PalindromecheckerAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "text": "A man a plan a canal Panama",
+    "ignorecase": true,
+    "ignorespaces": true,
+    "ignorepunctuation": true
+}
+
 try:
-    query = { "text": "A man a plan a canal Panama", "ignorecase": true, "ignorespaces": true, "ignorepunctuation": true }
     result = api.execute(query)
     print(result)
 finally:
