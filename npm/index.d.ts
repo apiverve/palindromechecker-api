@@ -4,29 +4,41 @@ declare module '@apiverve/palindromechecker' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface palindromecheckerResponse {
     status: string;
     error: string | null;
     data: PalindromeCheckerData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface PalindromeCheckerData {
-      text:                       string;
-      isPalindrome:               boolean;
-      cleanedText:                string;
-      reversedText:               string;
-      length:                     number;
+      text:                       null | string;
+      isPalindrome:               boolean | null;
+      cleanedText:                null | string;
+      reversedText:               null | string;
+      length:                     number | null;
       options:                    Options;
-      longestPalindromeSubstring: string;
-      longestPalindromeLength:    number;
+      longestPalindromeSubstring: null | string;
+      longestPalindromeLength:    number | null;
   }
   
   interface Options {
-      ignoreCase:        boolean;
-      ignoreSpaces:      boolean;
-      ignorePunctuation: boolean;
+      ignoreCase:        boolean | null;
+      ignoreSpaces:      boolean | null;
+      ignorePunctuation: boolean | null;
   }
 
   export default class palindromecheckerWrapper {
