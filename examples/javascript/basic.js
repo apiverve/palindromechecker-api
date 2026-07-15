@@ -13,7 +13,15 @@ const API_URL = 'https://api.apiverve.com/v1/palindromechecker';
  */
 async function callPalindromeCheckerAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            text: &#x27;A man a plan a canal Panama&#x27;,
+            ignorecase: true,
+            ignorespaces: true,
+            ignorepunctuation: true
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
