@@ -30,7 +30,14 @@ The Palindrome Checker API provides a simple, reliable way to integrate palindro
 ```javascript
 async function callPalindromeCheckerAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/palindromechecker', {
+        const params = new URLSearchParams({
+            text: 'A man a plan a canal Panama',
+            ignorecase: true,
+            ignorespaces: true,
+            ignorepunctuation: true
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/palindromechecker?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +57,7 @@ callPalindromeCheckerAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/palindromechecker?param=value" \
+curl -X GET "https://api.apiverve.com/v1/palindromechecker?text=A%20man%20a%20plan%20a%20canal%20Panama&ignorecase=true&ignorespaces=true&ignorepunctuation=true" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,7 +157,7 @@ go get github.com/apiverve/palindromechecker-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +176,7 @@ go get github.com/apiverve/palindromechecker-api/go
 The Palindrome Checker API is commonly used for:
 
 - **Web Applications** - Add palindrome checker features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with palindrome checker capabilities
 - **Data Pipelines** - Process and analyze data at scale
