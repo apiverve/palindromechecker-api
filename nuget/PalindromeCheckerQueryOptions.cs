@@ -20,18 +20,18 @@ namespace APIVerve.API.PalindromeChecker
         /// Ignore case when checking (default: true)
         /// </summary>
         [JsonProperty("ignorecase")]
-        public string Ignorecase { get; set; }
+        public bool? Ignorecase { get; set; }
 
         /// <summary>
         /// Ignore spaces when checking (default: true)
         /// </summary>
         [JsonProperty("ignorespaces")]
-        public string Ignorespaces { get; set; }
+        public bool? Ignorespaces { get; set; }
 
         /// <summary>
         /// Ignore punctuation when checking (default: true)
         /// </summary>
         [JsonProperty("ignorepunctuation")]
-        public string Ignorepunctuation { get; set; }
+        public bool? Ignorepunctuation { get; set; }
     }
 }
