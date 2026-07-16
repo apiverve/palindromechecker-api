@@ -25,6 +25,9 @@ namespace APIVerve.API.PalindromeChecker
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -33,7 +36,7 @@ namespace APIVerve.API.PalindromeChecker
         public string Text { get; set; }
 
         [JsonProperty("is_palindrome")]
-        public bool IsPalindrome { get; set; }
+        public bool? IsPalindrome { get; set; }
 
         [JsonProperty("cleaned_text")]
         public string CleanedText { get; set; }
@@ -42,7 +45,7 @@ namespace APIVerve.API.PalindromeChecker
         public string ReversedText { get; set; }
 
         [JsonProperty("length")]
-        public long Length { get; set; }
+        public long? Length { get; set; }
 
         [JsonProperty("options")]
         public Options Options { get; set; }
@@ -51,18 +54,30 @@ namespace APIVerve.API.PalindromeChecker
         public string LongestPalindromeSubstring { get; set; }
 
         [JsonProperty("longest_palindrome_length")]
-        public long LongestPalindromeLength { get; set; }
+        public long? LongestPalindromeLength { get; set; }
     }
 
     public partial class Options
     {
         [JsonProperty("ignore_case")]
-        public bool IgnoreCase { get; set; }
+        public bool? IgnoreCase { get; set; }
 
         [JsonProperty("ignore_spaces")]
-        public bool IgnoreSpaces { get; set; }
+        public bool? IgnoreSpaces { get; set; }
 
         [JsonProperty("ignore_punctuation")]
-        public bool IgnorePunctuation { get; set; }
+        public bool? IgnorePunctuation { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
