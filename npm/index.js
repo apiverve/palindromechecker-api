@@ -30,7 +30,7 @@ class palindromecheckerWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/palindromechecker';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"text":{"type":"string","required":true},"ignorecase":{"type":"boolean","required":false,"default":true},"ignorespaces":{"type":"boolean","required":false,"default":true},"ignorepunctuation":{"type":"boolean","required":false,"default":true}};
+        this.validationRules = {"text":{"type":"string","required":true,"maxLength":20000},"ignorecase":{"type":"boolean","required":false,"default":true},"ignorespaces":{"type":"boolean","required":false,"default":true},"ignorepunctuation":{"type":"boolean","required":false,"default":true}};
     }
 
     /**

@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/palindromechecker",
-  "version": "1.2.0",
-  "description": "Palindrome Checker is a tool for checking if text is a palindrome. It supports options to ignore case, spaces, and punctuation, and finds the longest palindromic substring.",
+  "version": "1.2.2",
+  "description": "Palindrome Checker tests whether a string reads the same forwards and backwards, with options to ignore casing, spacing, and punctuation. It returns the boolean verdict, the normalized text, the reversed comparison string, and the length of the longest palindromic sequence.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/palindromechecker-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/palindromechecker?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/palindromechecker?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
