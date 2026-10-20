@@ -2,9 +2,10 @@ openapi: 3.0.4
 info:
   title: Palindrome Checker
   description: >-
-    Palindrome Checker is a tool for checking if text is a palindrome. It
-    supports options to ignore case, spaces, and punctuation, and finds the
-    longest palindromic substring.
+    Palindrome Checker tests whether a string reads the same forwards and
+    backwards, with options to ignore casing, spacing, and punctuation. It
+    returns the boolean verdict, the normalized text, the reversed comparison
+    string, and the length of the longest palindromic sequence.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +20,7 @@ servers:
 paths:
   /v1/palindromechecker:
     get:
-      summary: Check Palindrome
+      summary: Palindrome Checker
       description: Check if text is a palindrome with customizable options
       operationId: palindromechecker
       parameters:
@@ -28,7 +29,7 @@ paths:
           schema:
             type: string
           required: true
-          description: The text to check for palindrome
+          description: The text to check for palindrome. Maximum 20000 characters
           example: A man a plan a canal Panama
         - name: ignorecase
           in: query
