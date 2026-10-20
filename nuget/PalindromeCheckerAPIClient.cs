@@ -67,7 +67,7 @@ namespace APIVerve.API.PalindromeChecker
         /// <summary>Validation rules for parameters</summary>
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
-            { "text", new ValidationRule { Type = "string", Required = true } },
+            { "text", new ValidationRule { Type = "string", Required = true, MaxLength = 20000 } },
             { "ignorecase", new ValidationRule { Type = "boolean", Required = false } },
             { "ignorespaces", new ValidationRule { Type = "boolean", Required = false } },
             { "ignorepunctuation", new ValidationRule { Type = "boolean", Required = false } }

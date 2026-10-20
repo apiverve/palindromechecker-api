@@ -11,7 +11,7 @@ namespace APIVerve.API.PalindromeChecker
     public class PalindromeCheckerQueryOptions
     {
         /// <summary>
-        /// The text to check for palindrome
+        /// The text to check for palindrome. Maximum 20000 characters
         /// </summary>
         [JsonProperty("text")]
         public string Text { get; set; }
