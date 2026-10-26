@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/palindromechecker",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Palindrome Checker tests whether a string reads the same forwards and backwards, with options to ignore casing, spacing, and punctuation. It returns the boolean verdict, the normalized text, the reversed comparison string, and the length of the longest palindromic sequence.",
   "main": "index.js",
   "types": "index.d.ts",
